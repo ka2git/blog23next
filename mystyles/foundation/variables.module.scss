@@ -1,0 +1,36 @@
+// ===================================
+// Sass レスポンシブ ブレイクポイント定義
+// ===================================
+$sp: "(max-width: 743px)";
+// $tb: "(min-width: 744px)";// 基本使わない
+$md: "(min-width: 744px)";
+
+// ===================================
+// Sass ダークモード
+// ===================================
+$dark: "(prefers-color-scheme: dark)";
+
+// 使うときの例
+// @use使うときは
+// @media #{g.$sp} {
+// }
+// @use使わないときは
+// @media #{$sp} {
+// }
+
+// ===================================
+// Sass mixin
+// ===================================
+@mixin mxAuto {
+  margin-left: auto;
+  margin-right: auto;
+}
+// @include mxAuto;
+
+@mixin hover {
+  &:hover,
+  &:active {
+    opacity: .8;
+  }
+}
+// a { @include hover; }

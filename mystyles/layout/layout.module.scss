@@ -1,0 +1,269 @@
+// --------------------
+// flexbox 両端揃え ※flexboxを使用 ※レスポンシブは苦手め
+// --------------------
+.spaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spaceBetweenSp2 {
+    @extend .spaceBetween;
+
+    > * {
+        @media #{$sp} {
+
+            width: 50%;
+
+            @at-root .spaceBetweenSp2 {
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+}
+
+// --------------------
+// 横並び（基本形） ※flexboxを使用
+// --------------------
+.sideBySide {
+    display: flex;
+    flex-direction: column; // SPでは縦並び 1カラム
+
+    @media #{$md} {
+        flex-direction: row; // PCでは横並び
+        justify-content: space-between;
+    }
+}
+
+.sideBySideAll {// どのデバイスでも横並び
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+// さらに縦方向センターにしたいとき併せて指定
+.alignItemsCenter {
+    align-items: center;
+}
+// .sideBySideInline {
+//     display: inline-flex;
+//     flex-direction: column; // SPでは縦並び 1カラム
+
+//     @media #{$md} {
+//         flex-direction: row; // PCでは横並び
+//         justify-content: space-between;
+//     }
+// }
+
+// --------------------
+// 横並び（中央揃え） ※flexboxを使用
+// --------------------
+.sideBySideCenter {
+
+    @extend .sideBySide;
+    align-items: center;
+    text-align: center;
+
+    @media #{$sp} {
+        text-align: left;    
+    }
+}
+
+.flexContainer {
+    @extend .sideBySide;
+    gap: var(--space-5);
+    margin: var(--space-5) 0 var(--space-6);
+}
+
+// @media (min-width: 768px) {
+//   .main {
+//     width: 768px;
+//   }
+
+//   .sidebar {
+//     width: 240px;
+//     position: sticky;
+//     top: 40px;
+//     align-self: flex-start;
+
+//     * {
+//       text-align: right;
+//     }
+
+//     :is(div, ul) {
+//       width: fit-content;
+//       margin-left: auto;
+//       place-items: flex-end;
+//       place-content: flex-end;
+//     }
+//   } 
+// }
+
+// --------------------
+// 横並び（SPもPCも左揃え） ※flexboxを使用
+// --------------------
+.sideBySideLeft {
+    display: flex;
+    flex-direction: row; // SP 横並び
+}
+
+// =========================
+// styles/container.module.scss
+// =========================
+// .containerDefault {
+//     width: 92%;
+//     max-width: 1152px;
+//     margin: 0 auto;
+// }
+
+// .containerLarge {
+//     @extend .containerDefault;
+//     max-width: 1280px;
+// }
+
+.containerMain {
+    @include mxAuto;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 var(--space-5);
+
+    @media #{$md} {
+        max-width: 1024px;
+    }
+// img {
+//   max-width: 100%;
+// }
+}
+
+.containerArticle {
+    @include mxAuto;
+    width: 100%;
+    max-width: 100%;
+
+    @media #{$md} {
+        max-width: 620px;
+    }
+// img {
+//   max-width: 100%;
+// }
+}
+
+
+// --------------------
+// 横並び（ SP PC TB 2カラム） ※gridを使用
+// --------------------
+.spMd2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+// --------------------
+// 横並び（ SP PC TB 3カラム） ※gridを使用
+// --------------------
+.spMd3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+// --------------------
+// 横並び（ SP1カラム/PCTB2カラム ） ※gridを使用
+// --------------------
+.sp1Md2 {
+    display: block;
+
+    @media #{$md} {
+        display: grid;
+        grid-template-columns: 1fr 1fr;// PCTB 2カラム
+    }
+}
+
+.sp1Md2--oneThird {// sp1カラム。mdで2カラム 比率が 1:2
+    display: block;
+
+    @media #{$md} {
+        display: grid;
+        grid-template-columns: 1fr 2fr;// PCTB 2カラム
+    }
+}
+
+
+
+// --------------------
+// 横並び（ SP1カラム/PCTB3カラム ） ※gridを使用
+// --------------------
+.sp1Md3 {
+    display: block;
+
+    @media #{$md} {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;// PCTB 3カラム
+    }
+}
+
+// --------------------
+// 横並び（ SP1カラム/PCTB4カラム ） ※gridを使用
+// --------------------
+.sp1Md4 {
+    display: block;
+
+    @media #{$md} {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;// PCTB 4カラム
+    }
+}
+
+// --------------------
+// 横並び（ SP2カラム/PCTB3カラム ） ※gridを使用
+// --------------------
+// .sideBySide--sp2md3 {
+.sp2Md3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media #{$md} {
+        grid-template-columns: 1fr 1fr 1fr;// PCTB 3カラム
+    }
+}
+
+// --------------------
+// 横並び（ SP2カラム/PCTB5カラム） ※gridを使用
+// --------------------
+// .sideBySide--sp2md4 {
+    .sp2Md5 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        // grid-template-columns: repeat(2, 50%);
+    
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;// PCTB 4カラム
+        }
+    }
+
+// --------------------
+// 横並び（ SP2カラム/PCTB4カラム） ※gridを使用
+// --------------------
+// .sideBySide--sp2md4 {
+.sp2Md4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: repeat(2, 50%);
+
+    @media #{$md} {
+        grid-template-columns: 1fr 1fr 1fr 1fr;// PCTB 4カラム
+    }
+}
+
+// --------------------
+// 横並び（ SP2カラム/PCTB5カラム） ※gridを使用
+// --------------------
+// .sideBySide--sp2md5 {
+.sp2Md5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: repeat(2, 50%);
+
+    @media #{$md} {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;// PCTB 4カラム
+    }
+}

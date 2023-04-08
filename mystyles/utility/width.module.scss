@@ -1,0 +1,148 @@
+// .親要素 {
+//  overflow: hidden; // width: 100vw; しとく。スクロールバーがあるページだとはみ出てしまうの回避できる。
+// }
+
+.fullWindowParent {//親要素に指定
+    overflow: hidden;
+    width: 100vw;
+
+    > * {
+        margin: 0 calc(50% - 50vw)!important;
+        // padding: 4px calc(50vw - 50% + 8px);
+        padding: 0 calc(50vw - 50%)!important;
+        width: 100vw!important;
+    
+         > img {
+             width: 100%!important;
+             border-radius: 0!important;
+         }
+    }
+}
+
+
+
+// .fullWindowParentSpOnly {
+//     @media #{$sp} {
+//         overflow: hidden;
+//         width: 100vw;
+    
+//         > * {
+//             margin: 0 calc(50% - 50vw)!important;
+//             // padding: 4px calc(50vw - 50% + 8px);
+//             padding: 0 calc(50vw - 50%)!important;
+//             width: 100vw!important;
+//             background-color: green;
+        
+//              > img {
+//                  width: 100%!important;
+//                  border-radius: 0!important;
+//              }
+//         }       
+//     }
+// }
+
+// .fullWindow {
+//     margin: 0 calc(50% - 50vw)!important;
+//     // padding: 4px calc(50vw - 50% + 8px);
+//     padding: 0 calc(50vw - 50%)!important;
+//     width: 100vw!important;
+//     background-color: green;
+
+//      > img {
+//          width: 100%!important;
+//      }
+// }
+
+
+.width100 {
+    width: var(--width-100);
+}
+
+.width90 {
+    width: var(--width-90);
+}
+
+.width80 {
+    width: var(--width-80);
+}
+
+.width70 {
+    width: var(--width-70);
+}
+
+.width60 {
+    width: var(--width-60);
+}
+
+.width50 {
+    width: var(--width-50);
+}
+
+.width40 {
+    width: var(--width-40);
+}
+
+.width30 {
+    width: var(--width-30);
+}
+
+.width20 {
+    width: var(--width-20);
+}
+
+.width10 {
+    width: var(--width-10);
+}
+
+
+.md\:width100 {
+    @media #{$md} {
+        width: var(--width-100)!important;
+    }    
+}
+.md\:width90 {
+    @media #{$md} {
+        width: var(--width-90)!important;
+    }    
+}
+.md\:width80 {
+    @media #{$md} {
+        width: var(--width-80)!important;
+    }    
+}
+.md\:width70 {
+    @media #{$md} {
+        width: var(--width-70)!important;
+    }    
+}
+.md\:width60 {
+    @media #{$md} {
+        width: var(--width-60)!important;
+    }    
+}
+.md\:width50 {
+    @media #{$md} {
+        width: var(--width-50)!important;
+    }    
+}
+.md\:width40 {
+    @media #{$md} {
+        width: var(--width-40)!important;
+    }    
+}
+.md\:width30 {
+    @media #{$md} {
+        width: var(--width-30)!important;
+    }    
+}
+.md\:width20 {
+    @media #{$md} {
+        width: var(--width-20)!important;
+    }    
+}
+
+.md\:width10 {
+    @media #{$md} {
+        width: var(--width-10)!important;
+    }    
+}

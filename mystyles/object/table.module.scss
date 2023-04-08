@@ -1,0 +1,26 @@
+.tableBase {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    text-align: center;
+
+    th {
+        padding: var(--space-3);
+        border: solid 1px var(--gray-20);
+        background: var(--gray-5);
+
+        @media #{$dark} {
+            background: var(--gray-20);
+            border: solid 1px var(--gray-30);
+        }
+    }
+
+    td {
+        padding: var(--space-3);
+        border: solid 1px var(--gray-20);
+
+        @media #{$dark} {
+            border: solid 1px var(--gray-30);
+        }
+    }
+}

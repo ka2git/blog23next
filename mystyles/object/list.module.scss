@@ -1,0 +1,14 @@
+.ulBase {
+
+    li::before {
+        display: inline-block;
+        margin-right: calc(1rem / 2);
+        position: relative;
+        top: calc(-1rem / 4.2);
+        border-radius: var(--radius-50);
+        content: "";
+        width: calc(1rem / 3);
+        height: calc(1rem / 3);
+        background-color: var(--gray-30);
+    }
+}

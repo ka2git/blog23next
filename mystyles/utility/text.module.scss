@@ -1,0 +1,39 @@
+.decoNone {
+    text-decoration: none;
+}
+
+.textCenter {
+    text-align: center;  
+
+    // &MdOnly {     
+    //     text-align: left;
+        
+    //     @media #{$md} {
+    //         text-align: center;
+    //     }
+    // }
+}
+
+// .textCenterImportant {
+//     text-align: center!important;  
+
+    // &MdOnly {     
+    //     text-align: left;
+        
+    //     @media #{$md} {
+    //         text-align: center;
+    //     }
+    // }
+// }
+
+.md\:textCenter {
+    @media #{$md} {
+        text-align: center!important;
+    }
+}
+
+.md\:textLeft {
+    @media #{$md} {
+        text-align: left!important;
+    }
+}

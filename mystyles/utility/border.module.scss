@@ -1,0 +1,108 @@
+// --------------------
+// border
+// --------------------
+.btGray {
+  border-top: 1px solid var(--gray-15);
+
+  @media #{$dark} {
+    border-color: var(--gray-25);
+  }
+}
+
+.bbGray {
+  border-bottom: 1px solid var(--gray-15);
+
+  @media #{$dark} {
+    border-color: var(--gray-25);
+  }
+}
+
+.blGray {
+  border-left: 1px solid var(--gray-15);
+
+  @media #{$dark} {
+    border-color: var(--gray-25);
+  }
+}
+
+.brGray {
+  border-right: 1px solid var(--gray-15);
+
+  @media #{$dark} {
+    border-color: var(--gray-25);
+  }
+}
+
+.bGray {
+  border: 1px solid var(--gray-15);
+
+  @media #{$dark} {
+    border-color: var(--gray-25);
+  }
+}
+
+// borderの幅 .bw1 から .bw10 を生成
+@for $i from 1 through 10 {
+  .bw#{$i} {
+    border-width: #{$i}px;
+  }
+}
+
+// --------------------
+// border-radius 角丸
+// --------------------
+
+
+@for $i from 0 through 11 {
+
+  .radius#{$i} {
+    border-radius: var(--radius-#{$i});
+  }
+
+}
+
+// .radius3xs {
+//   border-radius: var(--radius-3xs);
+// }
+
+// .radius2xs {
+//   border-radius: var(--radius-2xs);
+// }
+
+// .radiusXs {
+//   border-radius: var(--radius-xs);
+// }
+
+// .radiusSm {
+//   border-radius: var(--radius-sm);
+// }
+
+// .radiusMd {
+//   border-radius: var(--radius-md);
+// }
+
+// .radiusLg {
+//   border-radius: var(--radius-lg);
+// }
+
+// .radiusXl {
+//   border-radius: var(--radius-xl);
+// }
+
+// .radius2xl {
+//   border-radius: var(--radius-2xl);
+// }
+
+// .radius3xl {
+//   border-radius: var(--radius-3xl);
+// }
+  
+.radiusRound {
+  border-radius: var(--radius-round);
+}
+
+// figure > img の場合。著者丸アイコンなどに使用。
+.radiusRoundImportant img {
+  border-radius: var(--radius-round)!important;
+}
+

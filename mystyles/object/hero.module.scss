@@ -1,0 +1,44 @@
+.siteHeroImageContainer {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+
+    @media #{$sp} {
+        width: 100%;
+        height: initial;
+        aspect-ratio: 3 / 2;
+    }
+
+    & > img {
+        border-radius: var(--space-5);
+
+        @media #{$sp} {
+            border-radius: initial;
+        }
+    }
+}
+
+.pageHeroImageContainer {
+    position: relative;
+    margin-top: var(--space-5);
+    // @include mxAuto;
+    // max-width: 100%;
+    // max-width: var(--width-post);
+    height: 200px;
+
+    @media #{$sp} {
+        width: 100%;
+        height: initial;
+        aspect-ratio: 3 / 2;
+    }
+
+    & > img {
+        border-radius: var(--space-5);
+        object-fit: cover;
+
+        @media #{$sp} {
+            // border-radius: initial;
+            border-radius: var(--space-5);
+        }
+    }
+}

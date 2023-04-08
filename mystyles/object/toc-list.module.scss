@@ -1,0 +1,28 @@
+// 目次
+.tocList {//ul
+
+    > * + * {
+        margin-top: var(--space-2);
+    }
+
+    .h3 {
+        padding-left: 1em;
+        color: var(--gray-60);
+    }
+
+    .h4 {
+        padding-left: 2em;
+        color: var(--gray-50);
+    }
+
+    .h5 {
+        padding-left: 3em;
+        color: var(--gray-40);
+    }
+
+    .h6 {
+        padding-left: 4em;
+        color: var(--gray-30);
+    }
+
+}

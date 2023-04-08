@@ -1,0 +1,20 @@
+.siteLogo {
+    display: inline-block;
+    width: 160px;
+    // margin-left: auto;
+    // margin-right: auto;
+
+    img {
+        aspect-ratio: 1340 / 220;
+        width: 150px;
+        // max-width: 200px!important;
+    }
+
+    @media #{$md} {
+        width: 200px;
+
+        img {
+            width: 200px;
+        }
+    }
+}

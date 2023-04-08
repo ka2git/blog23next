@@ -1,0 +1,362 @@
+// _app.js で読み込む
+// import '../mystyles/globals.scss'
+
+// ===================================
+// CSS変数
+// ===================================
+:root {
+    // =========================
+    // カラー（色）
+    // =========================
+    --body : #fff;
+  
+    --white: #fff;
+    --gray-5: #f9f9f9;
+    --gray-10: #f3f3f3;
+    --gray-15: #eee;
+    --gray-20: #ddd;
+    --gray-25: #ccc;
+    --gray-30: #bbb;
+    --gray-40: #aaa;
+    --gray-50: #999;
+    --gray-60: #888;
+    --gray-70: #777;
+    --gray-80: #666;
+    --gray-85: #555;
+    --gray-90: #333;
+    --gray-95: #222;
+    --dark: #111;
+    --black: #000;
+
+    --white-always: #fff;
+    --gray-10-always: #f3f3f3;
+    --gray-15-always: #eee;
+    --gray-20-always: #ddd;
+    --gray-25-always: #ccc;
+    --gray-30-always: #bbb;
+
+    --main: #900;
+    --accent: #f90;
+  
+    --link-main: #03c;
+  
+    // ランキング
+    --gold: #af9500;
+    --silver: #b4b4b4;
+    --bronze: #ad8a56;
+  
+    // sns
+    --twitter: #1da1f2;
+    --facebook: #1877f2;
+    --instagram: #4c64d3;
+  
+  
+    // コード
+    --code: #333;
+  
+  
+    // ダークモードのとき
+    // @media #{$dark} {
+     @media (prefers-color-scheme: dark) {
+      --body: #333;  
+      --white: #000;
+      --gray-5: #111;
+      --gray-10: #222;
+      --gray-15: #333;
+      --gray-20: #555;
+      --gray-25: #666;
+      --gray-30: #777;
+      --gray-40: #888;
+      --gray-50: #999;
+      --gray-60: #aaa;
+      --gray-70: #bbb;
+      --gray-80: #ccc;
+      --gray-85: #ddd;
+      --gray-90: #eee;
+      --gray-95: #f3f3f3;
+      --dark: #f9f9f9;
+      --black: #fff;
+
+      --white-always: #fff;
+      --gray-10-always: #f3f3f3;
+      --gray-15-always: #eee;
+      --gray-20-always: #ddd;
+      --gray-25-always: #ccc;
+      --gray-30-always: #bbb;
+  
+      --code: #111;
+    }
+  
+    // =========================
+    // タイポグラフィ（フォントサイズ）
+    // =========================
+    // --body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); // 16-18px
+    // --display: clamp(4.5rem, 1.83rem + 11.34vw, 10rem); // 72-160
+    // --heading1: clamp(2rem, 1.3rem + 3vw, 4rem); // 32-64px
+    // ex.) https://goodpatch.com/work/coorum
+  
+    // --fz-body: 1rem;// 16px // line-height: calc(1em * 80 / 40);
+    // --fz-heading1: calc(1rem * 10 / 4);// 2.5x H1 見出し 40px
+    // --fz-heading2: calc(1rem * 10 / 5);// 2x H2 見出し 32px
+    // --fz-heading3: calc(1rem * 10 / 6.66666666);// 1.5x H3 見出し 24px
+    // --fz-heading4: calc(1rem * 10 / 8);// 1.25x H4 見出し 20px
+    // --fz-heading5: calc(1rem * 10 / 8.8888889);// 1.125x H5 見出し 18px
+    // --fz-heading6: calc(1rem * 10 / 9.4117647);// 1.0625x H6 見出し 17px
+
+    --fz-body: calc(1rem / 1.06666667);// 15px
+    // --fz-body-md: 1rem;
+    --fz-heading1: calc(1rem * 10 / 6.66666666);// 24px
+    --fz-heading2: calc(1rem * 10 / 8);// 20px
+    --fz-heading3: calc(1rem * 10 / 8.8888889);// 18px
+    --fz-heading4: calc(1rem * 10 / 9.4117647);// 17px
+    --fz-heading5: calc(1rem * 10 / 9.4117647);// 17px
+    --fz-heading6: 1rem;
+
+    --fz-tag: calc(1rem * 10 / 11.4285714);// 14px // 投稿一覧ページのタグ
+    --fz-tag-small: calc(1rem * 1 / 1.333333332); // 12px // 記事ページのタグ  
+    --fz-small-heading: calc(1rem * 10 / 11.4285714);// 14px //投稿日時 更新日時 とか
+    // --fz-small-heading: calc(1rem * 0.875);// 14px //投稿日時 更新日時 とか
+    --fz-caption: calc(1rem * 1 / 1.333333332); // 12px
+    // --fz-caption: calc(1rem * 0.75);// 12px 写真のキャプション とか
+
+    --fz-200: 2em;
+    --fz-190: 1.9em;
+    --fz-180: 1.8em;
+    --fz-150: 1.5em;
+    --fz-140: 1.4em;
+    --fz-130: 1.3em;
+    --fz-125: 1.25em;
+    --fz-120: 1.2em;
+    --fz-115: 1.15em;
+    --fz-110: 1.1em;
+    --fz-105: 1.05em;
+    --fz-95: .95em;
+    --fz-90: .9em;
+    --fz-85: .85em;
+    --fz-80: .8em;
+
+
+    // =========================
+    // 幅
+    // =========================
+    --width-main: 1024px;
+    --width-post: 620px;
+  
+    --width-100: 100%;
+    --width-90: 90%;
+    --width-80: 80%;
+    --width-70: 70%;
+    --width-60: 60%;
+    --width-50: 50%;
+    --width-40: 40%;
+    --width-30: 30%;
+    --width-20: 20%;
+    --width-10: 10%;
+  
+    // =========================
+    // スペース
+    // =========================
+    --space-4xs: calc(1rem * 1 / 8); // 1px
+    --space-3xs: calc(1rem * 1 / 8); // 2px
+    --space-2xs: calc(1rem * 1 / 4); // 4px
+    --space-xs: calc(1rem * 1 / 2); // 8px
+    --space-sm: calc(1rem * 1 / 1.333333332); // 12px
+    --space-md: 1rem;// 16px
+    --space-lg: calc(1rem * 1.5 );// 24px
+    --space-xl: calc(1rem * 2 );// 32px
+    --space-2xl: calc(1rem * 3);// 48px
+    --space-3xl: calc(1rem * 4);// 64px
+    --space-4xl: calc(1rem * 5);// 80px
+    --space-5xl: calc(1rem * 6);// 96px
+  
+    --space-0: 0;
+    --space-1: calc(1rem * 1 / 8); // 2px
+    --space-2: calc(1rem * 1 / 4); // 4px
+    --space-3: calc(1rem * 1 / 2); // 8px
+    --space-4: calc(1rem * 1 / 1.333333332); // 12px
+    --space-5: 1rem;// 16px
+    --space-6: calc(1rem * 1.5 );// 24px
+    --space-7: calc(1rem * 2 );// 32px
+    --space-8: calc(1rem * 3);// 48px
+    --space-9: calc(1rem * 4);// 64px
+    --space-10: calc(1rem * 5);// 80px
+    --space-11: calc(1rem * 6);// 96px
+  
+    // =========================
+    // 角丸
+    // =========================
+    --radius-3xs: calc(1rem * 1 / 8); // 2px
+    --radius-2xs: calc(1rem * 1 / 4); // 4px
+    --radius-xs: calc(1rem * 1 / 2); // 8px
+    --radius-sm: calc(1rem * 1 / 1.333333332); // 12px
+    --radius-md: 1rem;// 16px
+    --radius-lg: calc(1rem * 1.5 );// 24px
+    --radius-xl: calc(1rem * 2 );// 32px
+  
+    --radius-0: 0; // 2px
+    --radius-1: calc(1rem * 1 / 8); // 2px
+    --radius-2: calc(1rem * 1 / 4); // 4px
+    --radius-3: calc(1rem * 1 / 2); // 8px
+    --radius-4: calc(1rem * 1 / 1.333333332); // 12px
+    --radius-5: 1rem;// 16px
+    --radius-6: calc(1rem * 1.5 );// 24px
+    --radius-7: calc(1rem * 2 );// 32px
+  
+    --radius-50: 50%;
+    --radius-100: 100%;
+    --radius-round: 99rem;
+  }
+  
+  // =========================
+  // 基本設定 reset.css的な役割
+  // =========================
+  @import url(https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css);
+  
+  body {
+    // line-height: calc(1em * 80 / 40);
+    // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+    font-size: var(--fz-body);
+    font-feature-settings: "palt";
+    letter-spacing: 1px;
+    line-height: calc(1em * 1.5);
+    color: var(--gray-90);
+    background-color: var(--body);
+  }
+  
+  h1 {
+    font-size: var(--fz-heading1);
+    font-weight: 600;
+    line-height: calc(1em * 1.5);
+    // line-height: calc(1em * 63 / 40);
+  }
+  
+  h2 {
+    font-size: var(--fz-heading2);
+    font-weight: 600;
+    line-height: calc(1em * 1.4);
+  }
+  
+  h3 {
+    font-size: var(--fz-heading3);
+    font-weight: 600;
+    line-height: calc(1em * 1.4);
+  }
+  
+  h4 {
+    font-size: var(--fz-heading4);
+    font-weight: 600;
+    line-height: calc(1em * 1.4);
+  }
+  
+  h5 {
+    font-size: var(--fz-heading5);
+    font-weight: 600;
+    line-height: calc(1em * 1.4);
+  }
+  
+  h6 {
+    font-size: var(--fz-heading5);
+    font-weight: 500;
+    line-height: calc(1em * 1.4);
+  }
+  
+  // next/image
+  // span > img {
+  //   transition: 0.2s;
+  // }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  // リセット
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure,
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  
+  pre {
+    border-radius: var(--radius-3);
+    white-space: pre-wrap;
+    overflow-x: auto;
+    background-color: var(--code);
+    padding: var(--space-4) var(--space-5);
+    color: var(--gray-10-always)
+  }
+  // ===================================
+  // resetした後のプロジェクト後のデフォルト指定
+  // ===================================
+  
+  // コンテンツとしての写真の初期設定 astro-imagetools とかの最適化用に
+  figure img {
+    border-radius: var(--radius-4);
+  }
+  
+  // body {
+  //   padding: 0 var(--space-md);
+  // }
+  
+  
+  // Sassの$変数、Sassのmixin などグローバルに定義するファイル。
+  // ※CSS変数は_globals.scss に記述。
+  
+  // ===================================
+  // Sass レスポンシブ ブレイクポイント定義
+  // ===================================
+  $sp: "(max-width: 743px)";
+  // $tb: "(min-width: 744px)";// 基本使わない
+  $md: "(min-width: 744px)";
+  
+  // ===================================
+  // Sass ダークモード
+  // ===================================
+  $dark: "(prefers-color-scheme: dark)";
+  
+  // 使うときの例
+  // @use使うときは
+  // @media #{g.$sp} {
+  // }
+  // @use使わないときは
+  // @media #{$sp} {
+  // }
+  
+  // ===================================
+  // Sass mixin
+  // ===================================
+  @mixin mxAuto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  // @include mxAuto;
+  
+  @mixin hover {
+    &:hover,
+    &:active {
+      opacity: .8;
+    }
+  }
+  // a { @include hover; }

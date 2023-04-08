@@ -1,0 +1,24 @@
+.breadCrumbNext {
+    &::after {
+      content: "";
+      width: 5px;
+      height: 5px;
+      transform: rotate(45deg);
+      display: inline-block;
+      border-top: 1px solid var(--gray-70);
+      border-right: 1px solid var(--gray-70);
+      margin: 0 6px 2px 4px;
+    }
+  }
+  
+  .breadCrumbList {// ol
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0 var(--space-7);
+  }
+  
+  .breadCrumbItem {
+    font-size: var(--fz-90);
+    color: var(--gray-70);
+  }
